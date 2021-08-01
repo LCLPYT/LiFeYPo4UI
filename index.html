@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LiFeYPo4 Cell-Monitor</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/tippy/scale.css">
+    <link rel="stylesheet" href="css/tippy/light.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -16,19 +18,19 @@
                 <h5>Batterie 1</h5>
                 <div class="row row-cols-2 border-bottom border-top border-secondary pt-2 pb-2">
                     <div class="col d-flex flex-column align-items-center justify-content-center mb-2">
-                        <img src="img/cell.svg" alt="Zelle 1" width="50" height="50">
+                        <img src="img/cell.svg" alt="Zelle 1" class="cell-icon" cell-number="1" width="50" height="50">
                         <span class="stat">3,002 V</span>
                     </div>
                     <div class="col d-flex flex-column align-items-center justify-content-center mb-2">
-                        <img src="img/cell.svg" alt="Zelle 2" width="50" height="50">
+                        <img src="img/cell.svg" alt="Zelle 2" class="cell-icon" cell-number="2" width="50" height="50">
                         <span class="stat">3,002 V</span>
                     </div>
                     <div class="col d-flex flex-column align-items-center justify-content-center mb-2">
-                        <img src="img/cell.svg" alt="Zelle 3" width="50" height="50">
+                        <img src="img/cell.svg" alt="Zelle 3" class="cell-icon" cell-number="3" width="50" height="50">
                         <span class="stat">3,002 V</span>
                     </div>
                     <div class="col d-flex flex-column align-items-center justify-content-center mb-2">
-                        <img src="img/cell.svg" alt="Zelle 4" width="50" height="50">
+                        <img src="img/cell.svg" alt="Zelle 4" class="cell-icon" cell-number="4" width="50" height="50">
                         <span class="stat">3,002 V</span>
                     </div>
                 </div>
@@ -95,5 +97,19 @@
         </div>
     </div>
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/tippy-bundle.umd.min.js"></script>
+    <script>
+        Array.from(document.querySelectorAll('.cell-icon')).forEach(element => {
+            if(!element.hasAttribute('cell-number')) return;
+
+            const cellNumber = element.getAttribute('cell-number');
+            tippy(element, {
+                content: 'Zelle ' + cellNumber,
+                animation: 'scale',
+                theme: 'dark'
+            });
+        });
+    </script>
 </body>
 </html>
