@@ -1,0 +1,30 @@
+.text-lighter {
+    color: #ced4da;
+}
+
+.battery-desc {
+    font-size: 18px;
+}
+
+.grid-spacing-top {
+    margin-top: 12px;
+}
+
+.grid-spacing-bottom {
+    margin-bottom: 12px;
+}
+
+.card-shrink {
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+.card-extend {
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.stat {
+    white-space: nowrap;
+    font-weight: bold;
+}

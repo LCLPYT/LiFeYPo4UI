@@ -1,0 +1,99 @@
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LiFeYPo4 Cell-Monitor</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container-lg p-3">
+        <h2 class="text-lighter">LiFeYPo4 Cell-Monitor</h2>
+        <div class="row border-top border-secondary pt-2">
+            <!-- Batterie 1 Anzeige -->
+            <div class="col bg-dark rounded shadow py-3 px-4 text-light grid-spacing-bottom card-shrink">
+                <h5>Batterie 1</h5>
+                <div class="row row-cols-2 border-bottom border-top border-secondary pt-2 pb-2">
+                    <div class="col d-flex flex-column align-items-center justify-content-center mb-2">
+                        <img src="img/cell.svg" alt="Zelle 1" width="50" height="50">
+                        <span class="stat">3,002 V</span>
+                    </div>
+                    <div class="col d-flex flex-column align-items-center justify-content-center mb-2">
+                        <img src="img/cell.svg" alt="Zelle 2" width="50" height="50">
+                        <span class="stat">3,002 V</span>
+                    </div>
+                    <div class="col d-flex flex-column align-items-center justify-content-center mb-2">
+                        <img src="img/cell.svg" alt="Zelle 3" width="50" height="50">
+                        <span class="stat">3,002 V</span>
+                    </div>
+                    <div class="col d-flex flex-column align-items-center justify-content-center mb-2">
+                        <img src="img/cell.svg" alt="Zelle 4" width="50" height="50">
+                        <span class="stat">3,002 V</span>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center mt-3 battery-desc">
+                    <img src="img/charge.svg" alt="Spannung" class="h-100">
+                    <span class="ms-1 flex-fill">Spannung:</span>
+                    <span class="stat">13,11 V</span>
+                </div>
+                <div class="d-flex align-items-center mt-1 battery-desc">
+                    <img src="img/thermostat.svg" alt="Temperatur" class="h-100">
+                    <span class="ms-1 flex-fill">Temperatur:</span>
+                    <span class="stat">20,94 °C</span>
+                </div>
+                <div class="d-flex align-items-center mt-1 battery-desc">
+                    <img src="img/battery.svg" alt="Temperatur" class="h-100">
+                    <span class="ms-1 flex-fill">Verbrauch:</span>
+                    <span class="stat text-danger">-0,70 A</span>
+                </div>
+            </div>
+            <!-- Andere Batterien -->
+            <div class="col d-flex flex-column grid-spacing-bottom card-extend">
+                <div class="bg-dark rounded shadow py-3 px-4 text-light">
+                    <h5 class="border-bottom border-secondary pb-2">Reservebatterie</h5>
+                    <div class="d-flex align-items-center mt-3 battery-desc">
+                        <img src="img/charge.svg" alt="Spannung" class="h-100">
+                        <span class="ms-1 flex-fill">Spannung:</span>
+                        <span class="stat">13,06 V</span>
+                    </div>
+                </div>
+                <div class="bg-dark rounded shadow py-3 px-4 text-light grid-spacing-top">
+                    <h5 class="border-bottom border-secondary pb-2">Starterbatterie</h5>
+                    <div class="d-flex align-items-center mt-3 battery-desc">
+                        <img src="img/charge.svg" alt="Spannung" class="h-100">
+                        <span class="ms-1 flex-fill">Spannung:</span>
+                        <span class="stat">13,06 V</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Schalter -->
+            <div class="col d-flex flex-column card-extend">
+                <div class="bg-dark rounded shadow py-3 px-4 text-light">
+                    <h5 class="border-bottom border-secondary pb-2">Aktionen</h5>
+                    <div class="d-flex align-items-top mt-3 battery-desc">
+                        <span class="flex-fill me-2">LiFeYPo4:</span>
+                        <div class="d-flex flex-column">
+                            <button class="btn btn-primary">Einschalten</button>
+                            <button class="btn btn-secondary mt-2">Automatik anschalten</button>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mt-3 battery-desc">
+                        <span class="flex-fill me-2">Display Licht:</span>
+                        <div class="d-flex flex-column">
+                            <button class="btn btn-success">Einschalten</button>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mt-3 battery-desc">
+                        <span class="flex-fill me-2">Extern Lader:</span>
+                        <div class="d-flex flex-column">
+                            <button class="btn btn-success" disabled>Einschalten</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
