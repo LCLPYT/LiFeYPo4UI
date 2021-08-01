@@ -28,28 +28,3 @@
     white-space: nowrap;
     font-weight: bold;
 }
-
-body {
-    --tooltip-bg-color: #222;
-}
-
-.tippy-box[data-theme~='dark'] {
-    background-color: var(--tooltip-bg-color);
-    color: white;
-}
-
-.tippy-box[data-theme~='dark'][data-placement^='top']>.tippy-arrow::before {
-    border-top-color: var(--tooltip-bg-color);
-}
-
-.tippy-box[data-theme~='dark'][data-placement^='bottom']>.tippy-arrow::before {
-    border-bottom-color: var(--tooltip-bg-color);
-}
-
-.tippy-box[data-theme~='dark'][data-placement^='left']>.tippy-arrow::before {
-    border-left-color: var(--tooltip-bg-color);
-}
-
-.tippy-box[data-theme~='dark'][data-placement^='right']>.tippy-arrow::before {
-    border-right-color: var(--tooltip-bg-color);
-}
