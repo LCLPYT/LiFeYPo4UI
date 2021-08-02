@@ -1,4 +1,5 @@
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,31 +8,31 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <div class="container-lg p-3">
         <h2 class="text-lighter">LiFeYPo4 Cell-Monitor</h2>
         <div class="row border-top border-secondary pt-2">
             <!-- Batterie 1 Anzeige -->
             <div class="col bg-dark rounded shadow py-3 px-4 text-light grid-spacing-bottom card-shrink">
-                <h5>Batterie 1</h5>
-                <div class="row row-cols-2 border-bottom border-top border-secondary pt-2 pb-2">
+                <div class="row row-cols-4 border-bottom border-secondary">
                     <div class="col d-flex flex-column align-items-center justify-content-center mb-2">
-                        <span class="stat text-info">#1</span>
+                        <span class="stat text-info me-1">1</span>
                         <img src="img/cell.svg" alt="Zelle 1" width="50" height="50">
                         <span class="stat">3,002 V</span>
                     </div>
                     <div class="col d-flex flex-column align-items-center justify-content-center mb-2">
-                        <span class="stat text-info">#2</span>
+                        <span class="stat text-info me-1">2</span>
                         <img src="img/cell.svg" alt="Zelle 2" width="50" height="50">
                         <span class="stat">3,002 V</span>
                     </div>
                     <div class="col d-flex flex-column align-items-center justify-content-center mb-2">
-                        <span class="stat text-info">#3</span>
+                        <span class="stat text-info me-1">3</span>
                         <img src="img/cell.svg" alt="Zelle 3" width="50" height="50">
                         <span class="stat">3,002 V</span>
                     </div>
                     <div class="col d-flex flex-column align-items-center justify-content-center mb-2">
-                        <span class="stat text-info">#4</span>
+                        <span class="stat text-info me-1">4</span>
                         <img src="img/cell.svg" alt="Zelle 4" width="50" height="50">
                         <span class="stat">3,002 V</span>
                     </div>
@@ -53,20 +54,18 @@
                 </div>
             </div>
             <!-- Andere Batterien -->
-            <div class="col d-flex flex-column grid-spacing-bottom card-extend">
-                <div class="bg-dark rounded shadow py-3 px-4 text-light">
-                    <h5 class="border-bottom border-secondary pb-2">Reservebatterie</h5>
-                    <div class="d-flex align-items-center mt-3 battery-desc">
+            <div class="col grid-spacing-bottom card-extend">
+                <div class="bg-dark rounded shadow py-3 px-4 text-light d-flex align-items-center">
+                    <h5 class="mb-0">Reserve</h5>
+                    <div class="flex-fill d-flex align-items-center justify-content-end">
                         <img src="img/charge.svg" alt="Spannung" class="h-100">
-                        <span class="ms-1 flex-fill">Spannung:</span>
                         <span class="stat">13,06 V</span>
                     </div>
                 </div>
-                <div class="bg-dark rounded shadow py-3 px-4 text-light grid-spacing-top">
-                    <h5 class="border-bottom border-secondary pb-2">Starterbatterie</h5>
-                    <div class="d-flex align-items-center mt-3 battery-desc">
+                <div class="bg-dark rounded shadow py-3 px-4 text-light d-flex align-items-center grid-spacing-top">
+                    <h5 class="mb-0">Starter</h5>
+                    <div class="flex-fill d-flex align-items-center justify-content-end">
                         <img src="img/charge.svg" alt="Spannung" class="h-100">
-                        <span class="ms-1 flex-fill">Spannung:</span>
                         <span class="stat">13,06 V</span>
                     </div>
                 </div>
@@ -74,13 +73,9 @@
             <!-- Schalter -->
             <div class="col d-flex flex-column card-extend">
                 <div class="bg-dark rounded shadow py-3 px-4 text-light">
-                    <h5 class="border-bottom border-secondary pb-2">Aktionen</h5>
-                    <div class="d-flex align-items-top mt-3 battery-desc">
-                        <span class="flex-fill me-2">LiFeYPo4:</span>
-                        <div class="d-flex flex-column">
-                            <button class="btn btn-primary">Einschalten</button>
-                            <button class="btn btn-secondary mt-2">Automatik anschalten</button>
-                        </div>
+                    <div class="battery-desc">
+                        <button class="btn btn-primary w-100">LiFeYPo4 einschalten</button>
+                        <button class="btn btn-secondary mt-2 w-100">Automatik anschalten</button>
                     </div>
                     <div class="d-flex align-items-center mt-3 battery-desc">
                         <span class="flex-fill me-2">Display Licht:</span>
@@ -100,4 +95,5 @@
     </div>
     <script src="js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
