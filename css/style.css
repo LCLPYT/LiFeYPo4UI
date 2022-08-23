@@ -28,3 +28,7 @@
     white-space: nowrap;
     font-weight: bold;
 }
+
+#log {
+    font-family: monospace;
+}
