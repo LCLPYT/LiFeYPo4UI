@@ -16,7 +16,11 @@ function refresh(scheduleUpdate = true) {
         return;
     }
 
-    mount(data);
+    try {
+        mount(data);
+    } catch(err) {
+        logln(err);
+    }
 }
 
 function getRefreshCooldown() {
@@ -56,7 +60,24 @@ function mount({
 
     document.querySelector('#totalVoltage .voltage').innerHTML = unit(totalVoltage, 'V');
     document.querySelector('#temperature .temperature').innerHTML = unit(temperature, temperatureUnit || '');
-    document.querySelector('#totalCharge .charge').innerHTML = unit(totalCharge, 'A');
+
+    /** @type HTMLElement|undefined */
+    const chargeDisplay = document.querySelector('#totalCharge .charge');
+    if (totalCharge) {
+        let prefix = '';
+        if (totalCharge >= 0) {
+            prefix = totalCharge <= 10E-9 ? '\u00B1' : '+';
+            chargeDisplay?.classList.remove('text-danger');
+            chargeDisplay?.classList.add('text-success');
+        } else {
+            chargeDisplay?.classList.add('text-danger');
+            chargeDisplay?.classList.remove('text-success');
+        }
+        chargeDisplay.innerHTML = `${prefix}${totalCharge} A`;
+    } else {
+        chargeDisplay?.classList.remove('text-danger');
+        chargeDisplay.innerHTML = 'n/a';
+    }
 
     document.querySelector('#reserve .voltage').innerHTML = unit(reserveVoltage, 'V');
     document.querySelector('#starter .voltage').innerHTML = unit(starterVoltage, 'V');
@@ -67,10 +88,15 @@ function mount({
     document.getElementById('btnExternCharger').setAttribute('value', buttons['Relais1'] || 'AN');
 }
 
-function unit(value, unit) {
-    if (!value) return 'n/a';
+/**
+ * @param {number} value 
+ * @param {string} unit 
+ * @returns {string}
+ */
+function unit(value, unit, decimals = 2) {
+    if (value === undefined || value === null) return 'n/a';
 
-    return `${value} ${unit}`;
+    return `${value.toFixed(decimals)} ${unit}`;
 }
 
 // initiate data fetch
