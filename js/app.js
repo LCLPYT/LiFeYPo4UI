@@ -95,7 +95,7 @@ function mount({
             btn.removeAttribute('disabled');
 
             const state = btn.getAttribute('value') === 'AN';
-            btn.innerHTML = btn.getAttribute(state ? 'data-text-off' : 'data-text-on');
+            btn.innerHTML = btn.getAttribute(state ? 'data-text-on' : 'data-text-off');
 
             if (consumer) consumer(btn, buttons[name] === 'AN');
         } else {
