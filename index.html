@@ -74,25 +74,29 @@
             <div class="col d-flex flex-column card-extend">
                 <div class="bg-dark rounded shadow py-3 px-4 text-light">
                     <div class="battery-desc">
-                        <button id="btnLiFeYPo4" name="Relais0" class="btn btn-primary w-100">LiFeYPo4 einschalten</button>
-                        <button id="btnAutomatik" name="Automatik" class="btn btn-secondary mt-2 w-100">Automatik anschalten</button>
+                        <button id="btnLiFeYPo4" name="Relais0" class="btn btn-primary w-100" disabled 
+                            data-text-on="LiFeYPo4 eingeschaltet" data-text-off="LiFeYPo4 ausgeschaltet">LiFeYPo4 n/a</button>
+                        <button id="btnAutomatik" name="Automatik" class="btn btn-secondary mt-2 w-100" disabled
+                            data-text-on="Automatik eingeschaltet" data-text-off="Automatik ausgeschaltet">Automatik n/a</button>
                     </div>
                     <div class="d-flex align-items-center mt-3 battery-desc">
                         <span class="flex-fill me-2">Display Licht:</span>
                         <div class="d-flex flex-column">
-                            <button id="btnDisplayLight" name="Relais2" class="btn btn-success">Einschalten</button>
+                            <button id="btnDisplayLight" name="Relais2" class="btn btn-success" disabled
+                                data-text-on="Eingeschaltet" data-text-off="Ausgeschaltet">n/a</button>
                         </div>
                     </div>
-                    <div class="d-flex align-items-center mt-3 battery-desc">
+                    <div class="d-none align-items-center mt-3 battery-desc">
                         <span class="flex-fill me-2">Extern Lader:</span>
                         <div class="d-flex flex-column">
-                            <button id="btnExternCharger" name="Relais2" class="btn btn-success" disabled>Einschalten</button>
+                            <button id="btnExternCharger" name="Relais1" class="btn btn-success" disabled
+                                data-text-on="Eingeschaltet" data-text-off="Ausgeschaltet">n/a</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <textarea id="log" class="w-100 h-100 bg-dark rounded text-light" readonly></textarea>
+        <textarea id="log" class="w-100 h-100 bg-dark rounded text-light mt-3" readonly></textarea>
     </div>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script defer src="js/log.js"></script>

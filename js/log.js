@@ -2,7 +2,7 @@ const output = document.getElementById('log');
 
 function logln(...str) {
     const d = new Date();
-    const time = `[${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}] `;
+    const time = `[${d.getHours().toFixed(0).padStart(2, '0')}:${d.getMinutes().toFixed(0).padStart(2, '0')}:${d.getSeconds().toFixed(0).padStart(2, '0')}] `;
     output.innerHTML += time + str.map(x => toLogString(x)).join(' ') + '\n';
 }
 
