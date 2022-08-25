@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="de">
 
 <head>
@@ -11,8 +12,9 @@
 
 <body>
     <div class="container-lg p-3">
-        <h2 class="text-lighter">LiFeYPo4 Cell-Monitor</h2>
-        <div class="row border-top border-secondary pt-2">
+        <!-- <h2 class="text-lighter">LiFeYPo4 Cell-Monitor</h2>
+        <div class="row border-top border-secondary pt-2"> -->
+        <div class="row pt-2">
             <!-- Batterie 1 Anzeige -->
             <div class="col bg-dark rounded shadow py-3 px-4 text-light grid-spacing-bottom card-shrink">
                 <div class="row row-cols-4 border-bottom border-secondary">
@@ -96,7 +98,16 @@
                 </div>
             </div>
         </div>
-        <textarea id="log" class="w-100 h-100 bg-dark rounded text-light mt-3" readonly></textarea>
+
+        <div class="text-light mt-2">
+            <span class="collapse-handle" data-bs-toggle="collapse" data-bs-target="#logCollapse" aria-expanded="false" aria-controls="logCollapse">
+                Konsolenausgabe
+            </span>
+        </div>
+
+        <div class="collapse" id="logCollapse">
+            <textarea id="log" class="w-100 bg-dark rounded text-light mt-3" rows="15" readonly></textarea>
+        </div>
     </div>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script defer src="js/log.js"></script>

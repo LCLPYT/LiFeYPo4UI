@@ -1,3 +1,5 @@
+let currentTimeout = -1;
+
 function refresh(scheduleUpdate = true) {
     let data = null;
     try {
@@ -8,7 +10,14 @@ function refresh(scheduleUpdate = true) {
     }
 
     if (scheduleUpdate) {
-        setTimeout(() => dispatchFetch(), getRefreshCooldown());
+        if (currentTimeout !== -1) {
+            clearTimeout(currentTimeout);
+        }
+        
+        currentTimeout = setTimeout(() => {
+            currentTimeout = -1;
+            dispatchFetch();
+        }, getRefreshCooldown());
     }
 
     if (data == null) {
