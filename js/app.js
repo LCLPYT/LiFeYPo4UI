@@ -9,16 +9,7 @@ function refresh(scheduleUpdate = true) {
         return;
     }
 
-    if (scheduleUpdate) {
-        if (currentTimeout !== -1) {
-            clearTimeout(currentTimeout);
-        }
-        
-        currentTimeout = setTimeout(() => {
-            currentTimeout = -1;
-            dispatchFetch();
-        }, getRefreshCooldown());
-    }
+    if (scheduleUpdate) scheduleRefresh();
 
     if (data == null) {
         logln('Could not fetch data from server.');
@@ -30,6 +21,17 @@ function refresh(scheduleUpdate = true) {
     } catch(err) {
         logln(err);
     }
+}
+
+function scheduleRefresh() {
+    if (currentTimeout !== -1) {
+        clearTimeout(currentTimeout);
+    }
+    
+    currentTimeout = setTimeout(() => {
+        currentTimeout = -1;
+        dispatchFetch();
+    }, getRefreshCooldown());
 }
 
 function getRefreshCooldown() {
